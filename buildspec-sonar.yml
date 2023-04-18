@@ -12,6 +12,6 @@ phases:
     commands:
       - sonar-scanner -Dsonar.login=40e4aa48b2df8eb23fe1fe3cf0c8236e8a3ca62c -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=devopsecisha6 -Dsonar.organization=devosecisha6 -DgeneratePom=true
       - sleep 5
-      - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=ankit2887 >result.json
+      - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=devopsecisha6 >result.json
       - cat result.json
       - if [ $(jq -r '.projectStatus.status' result.json) = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
